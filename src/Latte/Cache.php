@@ -97,7 +97,7 @@ final class Cache
 
 	public function generateFileName(string $name, string $hash): string
 	{
-		$base = preg_match('#([/\\\\][\w@.-]{3,35}){1,3}$#D', '/' . $name, $m)
+		$base = preg_match('#([/\\\][\w@.-]{3,35}){1,3}$#D', '/' . $name, $m)
 			? preg_replace('#[^\w@.-]+#', '-', substr($m[0], 1)) . '--'
 			: '';
 		return $this->directory . '/' . $base . $hash . '.php';
